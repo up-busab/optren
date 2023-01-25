@@ -1,0 +1,27 @@
+version: '3.6'
+
+services:
+
+  opt:
+    container_name: optimzer
+    image: gurobi/python:9.5.1_3.9
+    volumes:
+      - ./volumes/data:/var/data
+      - ./volumes/runtime:/usr/local/runtime
+    environment:
+      - OPT_FINISHED=/usr/local/runtime/flags/opt_complete
+    working_dir: /usr/local/runtime
+    command: ./run_opt.sh
+
+
+  ren:
+    container_name: renderer
+    image: upbusab/mitsuba_render
+    volumes:
+      - ./volumes/data:/var/data
+      - ./volumes/runtime:/usr/local/runtime
+    environment:
+      - START_FLAG=/usr/local/runtime/flags/opt_complete
+    working_dir: /usr/local/runtime
+    command: ./run_ren.sh
+

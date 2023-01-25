@@ -1,0 +1,2 @@
+2022-12-11 15:57:08 INFO  main [mitsuba.cpp:256] Mitsuba version 0.5.0 (Linux, 64 bit), Copyright (c) 2014 Wenzel Jakob
+2022-12-11 15:57:08 INFO  main [mitsuba.cpp:356] Parsing scene description from "/var/data/sssdragon/sssdragon_imported.xml" ..
